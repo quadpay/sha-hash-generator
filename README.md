@@ -1,14 +1,18 @@
 # sha-hash-generator
 
-This is a c# dotnet core command line application for generating the hash for custom QuadPay gateway integrations.
+This is a c# dotnet core command line application for generating the HMAC-SHA256 one-way hash signature for custom QuadPay gateway integrations.
 
 See [Signing Requests](https://docs.quadpay.com/docs/custom-integration-guide#signing-requests) in the QP docs.
+
+## Requirements
+
+Requires dotnet core runtime or SDK to run. Works on Windows, macOS and Linux.
 
 ## Usage
 
 ```sh
 $ dotnet run ./ExampleBody.json merchant_client_secret
-09df2k3nfoinhsdjofu0a89sdhfnik
+tr4Ki42bm1Hc8JWtqQ1ZNsVvBR5AJY704cBbr0oFiuE=
 ```
 
 Which can then be used in ...
