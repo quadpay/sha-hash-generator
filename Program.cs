@@ -17,7 +17,13 @@ namespace HMACSHA
                 Console.Error.WriteLine(usage);
                 Environment.Exit(1);
             }
+            
+            // Get path to request body file from first argument
+            // e.g. ~/Downloads/body.json
             var path = args[0];
+            
+            // Get client secret from second argument
+            // e.g. _DtNFkqc_2NOeiEOB-wYofUn9wYndVmq7YKZEU8z85L4P7YrCRRtGPdxWr90lr7U
             var clientSecret = args[1];
 
             if (!File.Exists(path))
@@ -25,9 +31,14 @@ namespace HMACSHA
                 Console.Error.WriteLine($"File {path} does not exist");
                 Environment.Exit(1);
             }
-
+            
+            // Get request body content from file as a string
             var bodyString = File.ReadAllText(path);
+            
+            // convert to byte array (requirement to use `ComputeHash()`)
             var bytes = Encoding.UTF8.GetBytes(bodyString);
+            
+            // Get the hmacsha256 key from the cilent secret
             using (var hmacsha256 = new HMACSHA256(Encoding.UTF8.GetBytes(clientSecret)))
             {
                 var hash = hmacsha256.ComputeHash(bytes);
