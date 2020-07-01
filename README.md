@@ -17,4 +17,4 @@ $ dotnet run ./ExampleBody.json merchant_client_secret
 tr4Ki42bm1Hc8JWtqQ1ZNsVvBR5AJY704cBbr0oFiuE=
 ```
 
-Which can then be used in ...
+Which can then be used in the custom gateway API.
