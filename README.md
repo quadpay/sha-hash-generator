@@ -8,6 +8,8 @@ See [Signing Requests](https://docs.quadpay.com/docs/custom-integration-guide#si
 
 Requires dotnet core runtime or SDK to run. Works on Windows, macOS and Linux.
 
+Download [here](https://dotnet.microsoft.com/download)
+
 ## Usage
 
 You will need a json request body saved in a file, with the path to the file as the first argument, and the client secret as the second argument.
